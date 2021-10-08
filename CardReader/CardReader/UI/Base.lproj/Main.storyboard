@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sAJ-Rd-elo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Credit Card Collect View Controller-->
+        <scene sceneID="c31-d6-Vd3">
+            <objects>
+                <viewController id="5Yp-BB-Qai" customClass="CreditCardCollectViewController" customModule="CardReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GHU-Hr-rwO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HXi-ex-jeX">
+                                <rect key="frame" x="20" y="148" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GtN-Ft-bfo">
+                                <rect key="frame" x="20" y="207" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CN4-Au-9uC">
+                                <rect key="frame" x="20" y="263" width="110" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="n1K-qV-MB8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B31-VV-DRg">
+                                <rect key="frame" x="25" y="304" width="57" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Scan"/>
+                                <connections>
+                                    <action selector="buttonScan_touched:" destination="5Yp-BB-Qai" eventType="touchUpInside" id="sGd-4n-1Dp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ak1-Rx-ZJq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HXi-ex-jeX" firstAttribute="leading" secondItem="Ak1-Rx-ZJq" secondAttribute="leading" constant="20" id="7JU-KZ-5gx"/>
+                            <constraint firstItem="HXi-ex-jeX" firstAttribute="top" secondItem="Ak1-Rx-ZJq" secondAttribute="top" constant="60" id="DjO-ll-rdM"/>
+                            <constraint firstItem="GtN-Ft-bfo" firstAttribute="leading" secondItem="HXi-ex-jeX" secondAttribute="leading" id="Dwb-jX-apu"/>
+                            <constraint firstItem="CN4-Au-9uC" firstAttribute="leading" secondItem="HXi-ex-jeX" secondAttribute="leading" id="GQ3-xA-fpC"/>
+                            <constraint firstItem="CN4-Au-9uC" firstAttribute="top" secondItem="GtN-Ft-bfo" secondAttribute="bottom" constant="22" id="K8c-W2-1je"/>
+                            <constraint firstItem="GtN-Ft-bfo" firstAttribute="top" secondItem="HXi-ex-jeX" secondAttribute="bottom" constant="25" id="OIx-Vj-9XZ"/>
+                            <constraint firstItem="Ak1-Rx-ZJq" firstAttribute="trailing" secondItem="HXi-ex-jeX" secondAttribute="trailing" constant="20" id="eUO-wb-k9z"/>
+                            <constraint firstItem="Ak1-Rx-ZJq" firstAttribute="trailing" secondItem="GtN-Ft-bfo" secondAttribute="trailing" constant="20" id="f89-vc-v2W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jHj-Vj-fW3"/>
+                    <connections>
+                        <outlet property="ccNumTextField" destination="GtN-Ft-bfo" id="lBd-8L-pqF"/>
+                        <outlet property="dateTextField" destination="CN4-Au-9uC" id="qf2-ob-gBp"/>
+                        <outlet property="nameTextField" destination="HXi-ex-jeX" id="DDA-GL-L4b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ha-M8-fA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1081.1594202898552" y="115.84821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vnn-fy-3X9">
+            <objects>
+                <navigationController id="sAJ-Rd-elo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b53-1q-WsT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5Yp-BB-Qai" kind="relationship" relationship="rootViewController" id="bha-Tr-jLF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3F3-eT-Fbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2136" y="131"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="CardReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMH-4w-Yt2" customClass="PreviewView" customModule="CardReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KMH-4w-Yt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KGX-ft-v3I"/>
+                            <constraint firstItem="KMH-4w-Yt2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bm3-2X-uAI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KMH-4w-Yt2" secondAttribute="bottom" id="tJY-sT-XwJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KMH-4w-Yt2" secondAttribute="trailing" id="x9d-ng-sdc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="KMH-4w-Yt2" id="kIN-bf-XnP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
