@@ -37,6 +37,9 @@ class ViewController: UIViewController {
 
 
 
+
+
+
 extension ViewController: CreditCardScannerDelegate {
     
     func didFindCardNumber(_ ccNum: String, withDate date: String, forName name: String) {
@@ -45,6 +48,8 @@ extension ViewController: CreditCardScannerDelegate {
         print("name = \(name)")
         print("cc = \(ccNum)")
         print("date = \(date)")
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
 } // end extension
