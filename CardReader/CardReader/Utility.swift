@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 
@@ -32,15 +33,15 @@ extension String {
             if let tag = tag, tags.contains(tag) {
                 let name = (self as NSString).substring(with: tokenRange)
                 
-                print("---- \(name){\(name.count)}  ::  \(self){\(self.count)}")
                 // all kinds of garbage can parse as a name
-                //playing it safe, if the whole string is not the name then assume it is not a name
+                // playing it safe, if the whole string is not the name then assume it is not a name
                 nameFound = (name.count == self.count)
             }
         }
         
         return nameFound
     }
+    
     
     
     var parsedName: String? {

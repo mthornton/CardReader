@@ -34,9 +34,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B31-VV-DRg">
-                                <rect key="frame" x="25" y="304" width="57" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B31-VV-DRg">
+                                <rect key="frame" x="20" y="316" width="56.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Scan"/>
                                 <connections>
@@ -47,12 +46,15 @@
                         <viewLayoutGuide key="safeArea" id="Ak1-Rx-ZJq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="B31-VV-DRg" firstAttribute="top" secondItem="CN4-Au-9uC" secondAttribute="bottom" constant="19" id="3Ah-zK-1ja"/>
                             <constraint firstItem="HXi-ex-jeX" firstAttribute="leading" secondItem="Ak1-Rx-ZJq" secondAttribute="leading" constant="20" id="7JU-KZ-5gx"/>
                             <constraint firstItem="HXi-ex-jeX" firstAttribute="top" secondItem="Ak1-Rx-ZJq" secondAttribute="top" constant="60" id="DjO-ll-rdM"/>
                             <constraint firstItem="GtN-Ft-bfo" firstAttribute="leading" secondItem="HXi-ex-jeX" secondAttribute="leading" id="Dwb-jX-apu"/>
                             <constraint firstItem="CN4-Au-9uC" firstAttribute="leading" secondItem="HXi-ex-jeX" secondAttribute="leading" id="GQ3-xA-fpC"/>
                             <constraint firstItem="CN4-Au-9uC" firstAttribute="top" secondItem="GtN-Ft-bfo" secondAttribute="bottom" constant="22" id="K8c-W2-1je"/>
+                            <constraint firstItem="B31-VV-DRg" firstAttribute="leading" secondItem="HXi-ex-jeX" secondAttribute="leading" id="LQa-Im-ixM"/>
                             <constraint firstItem="GtN-Ft-bfo" firstAttribute="top" secondItem="HXi-ex-jeX" secondAttribute="bottom" constant="25" id="OIx-Vj-9XZ"/>
+                            <constraint firstItem="Ak1-Rx-ZJq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="B31-VV-DRg" secondAttribute="trailing" constant="337.5" id="Skd-Yf-dzA"/>
                             <constraint firstItem="Ak1-Rx-ZJq" firstAttribute="trailing" secondItem="HXi-ex-jeX" secondAttribute="trailing" constant="20" id="eUO-wb-k9z"/>
                             <constraint firstItem="Ak1-Rx-ZJq" firstAttribute="trailing" secondItem="GtN-Ft-bfo" secondAttribute="trailing" constant="20" id="f89-vc-v2W"/>
                         </constraints>

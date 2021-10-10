@@ -16,17 +16,35 @@ class CreditCardCollectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
+    
     @IBAction func buttonScan_touched(_ sender: Any) {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController {
+            vc.cardDataFound = self.didFindCardNumber(_:withDate:forName:)
+            vc.cardDataNotFound = self.didNotFindCardNumber
             self.navigationController?.present(vc, animated: true, completion: nil)
         }
     }
 
-}
+    
+    
+    func didFindCardNumber(_ ccNum: String, withDate date: String, forName name: String) {
+        
+        nameTextField.text = name
+        ccNumTextField.text = ccNum
+        dateTextField.text = date
+    }
+    
+    
+    
+    func didNotFindCardNumber() -> Void {
+    
+        // do somethign to let the user know it failed
+    }
+    
+    
+} // end class
