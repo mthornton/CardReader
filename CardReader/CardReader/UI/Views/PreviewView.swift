@@ -19,6 +19,8 @@ class PreviewView: UIView {
     private lazy var previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
     private let outlineLayer = CAShapeLayer()
     
+    private var device: AVCaptureDevice?
+    
     
     typealias CapturedCGImage = (CGImage) -> Void
     var didCaptureCGImage: CapturedCGImage?
@@ -42,15 +44,22 @@ class PreviewView: UIView {
 
 
 
-    public func startCameraFeed() {
+    public func startCameraFeed(torchOn: Bool = false) {
                 
         captureSession.startRunning()
+        
+        if torchOn {
+            self.turnTorchOn()
+        }
     }
     
     
     
     public func stopCameraFeed() {
         captureSession.stopRunning()
+        
+        // just in case it was turned on
+        self.turnTorchOff()
     }
     
     
@@ -92,6 +101,43 @@ class PreviewView: UIView {
     
     
     
+    public func turnTorchOn() {
+        
+        if let device = device {
+            // turn on the flashlight
+            if (device.hasTorch) {
+                do {
+                    try device.lockForConfiguration()
+                    
+                    if (device.torchMode == AVCaptureDevice.TorchMode.off) {
+                        try device.setTorchModeOn(level: 1.0)
+                    }
+                }
+                catch { }
+            }
+        }
+    }
+
+    
+    
+    public func turnTorchOff() {
+        
+        if let device = device {
+            // turn on the flashlight
+            if (device.hasTorch) {
+                do {
+                    try device.lockForConfiguration()
+                    
+                    if (device.torchMode == AVCaptureDevice.TorchMode.on) {
+                        device.torchMode = .off
+                    }
+                }
+                catch { }
+            }
+        }
+    }
+    
+    
     private func setCameraInput() {
 
         let deviceTypes: [AVCaptureDevice.DeviceType] = [.builtInWideAngleCamera, .builtInDualCamera, .builtInTrueDepthCamera]
@@ -101,6 +147,8 @@ class PreviewView: UIView {
             //TODO: something in UX
             return
         }
+        
+        self.device = device
         
         do {
             let cameraInput = try AVCaptureDeviceInput(device: device)

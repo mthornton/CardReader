@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         // turn the preview on
-        previewView.startCameraFeed()
+        previewView.startCameraFeed(torchOn: false)
     }
     
     

@@ -51,6 +51,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE29901B2714B9D7008E523F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A3B20270F54BB007B128A /* PreviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE29901C2714B9ED008E523F /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A3B27270F9201007B128A /* CreditCardScanner.swift */,
+				BE6A3B25270F73A1007B128A /* Utility.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		BE6A3AFD270F2A91007B128A = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +91,7 @@
 				BE6A3B1D270F33CE007B128A /* Support Files */,
 				BE6A3B24270F7372007B128A /* Credit Card Validator */,
 				BE6A3B1E270F33EB007B128A /* UI */,
-				BE6A3B25270F73A1007B128A /* Utility.swift */,
+				BE29901C2714B9ED008E523F /* Misc */,
 			);
 			path = CardReader;
 			sourceTree = "<group>";
@@ -94,6 +111,7 @@
 				BE6A3B12270F2A94007B128A /* Assets.xcassets */,
 				BE6A3B14270F2A94007B128A /* LaunchScreen.storyboard */,
 				BE6A3B0F270F2A91007B128A /* Main.storyboard */,
+				BE29901B2714B9D7008E523F /* Views */,
 				BE6A3B1F270F33F9007B128A /* View Controllers */,
 			);
 			path = UI;
@@ -103,8 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				BE6A3B0D270F2A91007B128A /* ViewController.swift */,
-				BE6A3B20270F54BB007B128A /* PreviewView.swift */,
-				BE6A3B27270F9201007B128A /* CreditCardScanner.swift */,
 				BE2990162710E58B008E523F /* CreditCardCollectViewController.swift */,
 			);
 			path = "View Controllers";
